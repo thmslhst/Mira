@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/gui.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+</head>
+<body>
+
+    <!-- GUI -->
+
+    <div id="gui" ng-app="GUI" ng-controller="GUIController">
+
+        <!-- <nav id="gui-menu">
+            <h1 id="app-logo">Mira</h1>
+            <ul class="menu-buttons">
+                <li>
+                    <button type="button" class="btn-save" ng-class="{active: displaySaveModal}" ng-click="showModal('save')">save</button>
+                </li>
+                <li>
+                    <button type="button" class="btn-load" ng-class="{active: displayPresets}" ng-click="showModal('presets')">presets</button>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </nav> -->
+
+        <section id="controls">
+            <div class="gui-group" ng-repeat="(groupKey, group) in settings">
+
+                <div class="gui-section-title" style="background-color: {{group.backgroundColor}}">{{group.title}}</div>
+
+                <div class="gui-control" ng-class="{inactive: !control.active, nomargin: $last}" ng-repeat="(controlKey, control) in group.controls">
+                    <span class="title">{{control.title}}</span>
+                    <span class="value">{{control.val}}</span>
+                    <input type="checkbox" class="switch" ng-model="control.active" ng-change="toggleControl(groupKey, controlKey, control.active)">
+                    <div class="clearfix"></div>
+                    <input
+                        min="{{control.min}}"
+                        max="{{control.max}}"
+                        step="{{control.step}}"
+                        type="{{control.type}}"
+                        ng-model="control.val"
+                        ng-change="updateControl(groupKey, controlKey, control.val)"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section id="sidebar">
+            <div id="spectrum" class="gui-section">
+                <div class="gui-section-title" style="background-color: #FF9D5D">SPECTRUM</div>
+                <div id="gui-meter"></div>
+            </div>
+            <div id="midi-devices" class="gui-section">
+                <div class="gui-section-title" style="background-color: #905DD6">MIDI DEVICES</div>
+                <ul>
+                    <li ng-repeat="device in midiDevices">
+                      {{device}} {{note}}
+                      <div class="note-on" ng-class="{active: notesOn[$index]}"></div>
+                      <div class="clearfix"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gui-save-modal" class="gui-modal" ng-show="displaySaveModal">
+            <form ng-submit="saveSettings()">
+                <div class="title">SAVE</div>
+                <p>CREATE NEW PRESET</p>
+                <input type="text" ng-model="newPresetName">
+                <br/>
+                <button type="submit" class="btn-create">CREATE</button>
+            </form>
+            <button type="button" class="btn-close" ng-click="showModal('close')">X</button>
+        </section>
+
+        <section id="gui-presets" ng-show="displayPresets">
+            <div ng-show="presetsCollection.length == 0" class="no-presets">NO PRESETS</div>
+            <ul>
+                <li ng-repeat="(presetsKey, presets) in presetsCollection">
+                    <button type="button" class="btn-load" ng-class="{active: presetsKey == lastPresetsLoaded, nomargin: $last}" ng-click="loadPresets(presetsKey)">{{presets.name}}</button>
+                    <button type="button" class="btn-delete" ng-click="deletePresets(presetsKey)">X</button>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+            <!--<button type="button" class="btn-close" ng-click="showModal('close')">X</button>-->
+        </section>
+
+    </div>
+
+    <!-- LIBS -->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/libs/eventEmitter/EventEmitter.min.js"></script>
+    <script src="js/libs/angular/angular.min.js"></script>
+    <script src="js/libs/two.js/build/two.min.js"></script>
+
+    <!-- APP -->
+
+    <script src="js/app/animation-frame.js"></script>
+    <script src="js/app/sound-injecter.js"></script>
+    <script src="js/app/midi-injecter.js"></script>
+    <script src="js/app/osc-manager.js"></script>
+    <script src="js/app/gui.js"></script>
+
+    <script src="js/app/app.js"></script>
+</body>
+</html>

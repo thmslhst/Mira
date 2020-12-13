@@ -1,0 +1,94 @@
+{
+
+  "lights": {
+
+    "title" : "Lights",
+
+    "backgroundColor" : "#00B1FF",
+
+    "controls": {
+
+      "fft_0" : {
+        "title" : "sun rotation x",
+        "active" : true,
+        "type" : "range",
+        "max" : 1,
+        "min" : 0,
+        "step" : 0.01,
+        "val" : 0.0
+      },
+
+      "fft_50" : {
+        "title" : "sun rotation y",
+        "active" : true,
+        "type" : "range",
+        "max" : 1,
+        "min" : 0,
+        "step" : 0.01,
+        "val" : 0.0
+      }
+    }
+  },
+
+  "models": {
+
+    "title" : "models",
+
+    "backgroundColor" : "#53CA66",
+
+    "controls": {
+
+      "fft_0" : {
+        "title" : "sun rotation x",
+        "active" : true,
+        "type" : "range",
+        "max" : 1,
+        "min" : 0,
+        "step" : 0.01,
+        "val" : 0.0
+      },
+
+      "fft_50" : {
+        "title" : "sun rotation y",
+        "active" : true,
+        "type" : "range",
+        "max" : 1,
+        "min" : 0,
+        "step" : 0.01,
+        "val" : 0.0
+      }
+    }
+  },
+
+  "textures": {
+
+    "title" : "Textures / Shaders",
+
+    "backgroundColor" : "#FFC229",
+
+    "controls": {
+
+      "fft_0" : {
+        "title" : "sun rotation x",
+        "active" : true,
+        "type" : "range",
+        "max" : 1,
+        "min" : 0,
+        "step" : 0.01,
+        "val" : 0.0
+      },
+
+      "fft_50" : {
+        "title" : "sun rotation y",
+        "active" : true,
+        "type" : "range",
+        "max" : 1,
+        "min" : 0,
+        "step" : 0.01,
+        "val" : 0.0
+      }
+    }
+  }
+
+
+}

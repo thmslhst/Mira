@@ -1,0 +1,313 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#gui{
+    width: 100%;
+    height: 100%;
+}
+
+#gui-menu{
+    width: 100%;
+    height: 35px;
+    background-color: #1B1B1B;
+    color: #bcbcbc;
+    border-bottom: 1px solid #111;
+}
+
+#app-logo{
+    text-align: center;
+    margin: 0 0 0 10px;
+    font-size: 18px;
+    line-height: 35px;
+    font-weight: 300;
+    float: left;
+}
+
+.menu-buttons{
+    height: 100%;
+    float: right;
+}
+.menu-buttons li{
+    height: 100%;
+    float: left;
+}
+
+.menu-buttons button{
+    width: auto;
+    height: 100%;
+    font-family: 'Roboto Mono', Verdana, sans-serif;
+    border: none;
+    background-color: #1b1b1b;
+    color: #bcbcbc;
+    padding: 0 15px;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.menu-buttons button:hover{
+    background-color: #bcbcbc;
+    color: #111;
+}
+.menu-buttons button.active{
+    background-color: #bcbcbc;
+    color: #111;
+}
+
+.gui-modal{
+    width: 50%;
+    height: 400px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #111;
+    padding: 15px;
+}
+.gui-modal .title{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+.gui-modal button{
+    background: #fff;
+    color: #111;
+    padding: 5px 8px;
+}
+.gui-modal .btn-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+}
+#gui-save-modal{
+    background-color: #00b1ff;
+    text-align: center;
+}
+#gui-save-modal input[type=text]{
+    padding: 5px;
+    outline: none;
+    width: 80%;
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+#gui-save-modal .title{
+    margin-bottom: 100px;
+}
+#gui-save-modal .btn-create{
+    width: 30%;
+    padding: 15px;
+    font-size: 15px;
+}
+
+#gui-presets{
+    background-color: #111;
+    width: 250px;
+    max-height: 197px;
+    position: fixed;
+    top: 35px;
+    right: 0;
+    overflow-y: scroll;
+}
+#gui-presets .no-presets{
+    text-align: center;
+    margin-top: 30px;
+}
+#gui-presets ul{
+    margin: auto;
+}
+#gui-presets .btn-load{
+    width: calc(100% - 32px);
+    height: 32px;
+    text-align: left;
+    text-transform: uppercase;
+    background-color: #E6E6E6;
+    color: #111;
+    font-size: 11px;
+    margin-bottom: 1px;
+}
+#gui-presets .btn-load:hover{
+    background-color: #fff;
+}
+#gui-presets .btn-load.active{
+    background-color: #ffc229;
+}
+#gui-presets .btn-load.nomargin{
+    margin-bottom: 0;
+}
+#gui-presets .btn-delete{
+    width: 32px;
+    height: 32px;
+    background-color: #4A4A4A;
+    color: #111;
+    float: right;
+}
+#gui-presets .btn-delete:hover{
+    background-color: #ff3331;
+}
+
+.gui-group{
+    width: 20%;
+    float: left;
+    padding: 5px 5px 0 0;
+}
+.gui-section{
+    width: 100%;
+    padding: 5px 5px 0 5px;
+}
+
+.gui-section-title{
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 0;
+    background-color: #bcbcbc;
+    color: #111;
+}
+
+.gui-control{
+    margin-bottom: 1px;
+    padding: 8px 8px 5px 8px;
+    background-color: #3C3C3C;
+}
+
+.gui-control.nomargin{
+    margin-bottom: 0;
+}
+
+.gui-control .title{
+    color: #bcbcbc;
+}
+
+.gui-control .title, .gui-control .value{
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.gui-control.inactive{
+    opacity: 0.4;
+}
+
+.gui-control .switch{
+    float: right;
+    -webkit-appearance:none;
+    width: 10px;
+    height: 10px;
+    cursor:pointer;
+    border-radius:2em;
+    background-color: #111;
+    outline: none;
+    margin: 0;
+}
+.gui-control .switch:checked {
+    background-color: #bcbcbc;
+}
+.gui-control .switch:before, .gui-control .switch:checked:before {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    line-height:20px;
+    text-align:center;
+    color:#fff;
+    /*content: '✘';*/
+}
+.gui-control .switch:checked:before {
+    /*content: '✔';*/
+}
+.gui-control .switch:hover:before{
+    background: rgba(255,255,255,0.3);
+}
+
+#controls{
+    width: 50%;
+    height: calc(100% - 35px);
+    overflow-y: scroll;
+    float: left;
+}
+#sidebar{
+    width: 50%;
+    height: calc(100% - 35px);
+    overflow-y: scroll;
+    float: right;
+}
+
+#gui-meter{
+    width: 100%;
+    height: 350px;
+    background-color: #1B1B1B;
+}
+
+#midi-devices ul{
+    background-color: #BCBCBC;
+}
+
+#midi-devices li{
+    font-size: 12px;
+    padding: 5px;
+}
+#midi-devices .note-on{
+  width: 8px;
+  height: 16px;
+  float: right;
+  border-radius: 99px;
+  background-color: #212121;
+}
+#midi-devices .note-on.active{
+  background-color: #53CA66;
+}
+
+#gui label{
+    display: block;
+    padding: 10px 10px 0 10px;
+}
+#gui label .val{
+    float: right;
+}
+
+#gui input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 20px;
+    outline: none;
+    margin: 0;
+    margin-top: 5px;
+    border: none;
+    background-color: #212121;
+}
+#gui input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+#gui input[type=range]:focus {
+    outline: none;
+}
+#gui input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: #bcbcbc;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #111;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #ffc229;
+}
+
+.clearfix{
+    clear: both;
+}

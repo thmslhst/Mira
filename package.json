@@ -1,0 +1,23 @@
+{
+  "name": "mira",
+  "version": "0.2.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io": "^0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/th0maslh0est/mira.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/th0maslh0est/mira/issues"
+  },
+  "homepage": "https://github.com/th0maslh0est/mira#readme"
+}
